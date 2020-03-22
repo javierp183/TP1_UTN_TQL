@@ -29,6 +29,13 @@ CREATE TABLE Autores
 
 )
 
+CREATE TABLE Genero
+(
+    ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
+    Autor VARCHAR(100)
+
+)
+
 create Table libros
 (
     ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
