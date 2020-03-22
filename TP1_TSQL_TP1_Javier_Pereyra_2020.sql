@@ -3,19 +3,27 @@
 
 
 
-Use Biblioteca
+--- Use Biblioteca
+
+
+CREATE TABLE Idioma
+(
+    ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
+    Descripcion VARCHAR(100)
+)
+
 
 create Table libros
 (
-    ID INT NOT NULL PRIMARY KEY IDENTITY (10, 10),
+    ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
     Idioma varchar(20),
     Editorial varchar(50),
     Genero varchar(20),
     Autor varchar(100),
-    CodLibro INT NOT NULL IDENTITY (10, 10),
-    CodAutor INT NOT NULL IDENTITY (10, 10),
-    CodIdioma INT NOT NULL IDENTITY (10, 10),
-    CodGenero INT NOT NULL IDENTITY (10, 10)
+    CodLibro INT NOT NULL,
+    CodAutor INT NOT NULL,
+    CodIdioma INT NOT NULL FOREIGN KEY REFERENCES Idioma(ID),
+    CodGenero INT NOT NULL,
 )
 
 
