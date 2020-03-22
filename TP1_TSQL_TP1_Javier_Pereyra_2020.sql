@@ -10,6 +10,12 @@ la siguiente linea, utiliza la base de datos ' Biblioteca '
 */
 
 
+/*
+
+la siguientes lineas arman la estructura de tablas tanto para Idioma como para
+Autores, las mismas disponen de un unico PK que luego es usado en la tabla
+principal de 'libros' como FK's
+
 CREATE TABLE Idioma
 (
     ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
@@ -35,6 +41,8 @@ create Table libros
     CodIdioma INT NOT NULL,
     CodGenero INT NOT NULL,
 )
+
+*/
 
 
 
