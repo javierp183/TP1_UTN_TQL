@@ -1,9 +1,13 @@
---- create database Biblioteca
 
+/*
+La siguiente, es la linea para crear la base de datos de la biblioteca:
+create database Biblioteca
+*/
 
-
-
+/*
+la siguiente linea, utiliza la base de datos ' Biblioteca '
 --- Use Biblioteca
+*/
 
 
 CREATE TABLE Idioma
@@ -12,19 +16,26 @@ CREATE TABLE Idioma
     Descripcion VARCHAR(100)
 )
 
+CREATE TABLE Autores
+(
+    ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
+    Autor VARCHAR(100)
+
+)
 
 create Table libros
 (
     ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    Idioma varchar(20),
+    Idioma FOREIGN KEY REFERENCES Idioma(ID),
     Editorial varchar(50),
     Genero varchar(20),
-    Autor varchar(100),
+    Autor FOREIGN KEY REFERENCES Autor(ID),
     CodLibro INT NOT NULL,
     CodAutor INT NOT NULL,
-    CodIdioma INT NOT NULL FOREIGN KEY REFERENCES Idioma(ID),
+    CodIdioma INT NOT NULL,
     CodGenero INT NOT NULL,
 )
+
 
 
 /*
