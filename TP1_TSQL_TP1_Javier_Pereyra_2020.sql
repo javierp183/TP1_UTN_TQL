@@ -1,5 +1,8 @@
 --- create database Biblioteca
 
+
+
+
 Use Biblioteca
 
 create Table libros
@@ -14,6 +17,7 @@ create Table libros
     CodIdioma INT NOT NULL IDENTITY (10, 10),
     CodGenero INT NOT NULL IDENTITY (10, 10)
 )
+
 
 /*
 El siguiente codigo, lo uso de ejemplo:
