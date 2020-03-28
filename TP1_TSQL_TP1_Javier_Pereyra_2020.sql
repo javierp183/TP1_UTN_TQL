@@ -1,13 +1,14 @@
 
 /*
 La siguiente, es la linea para crear la base de datos de la biblioteca:
-create database Biblioteca
 */
+--- create database Biblioteca
 
 /*
 la siguiente linea, utiliza la base de datos ' Biblioteca '
---- Use Biblioteca
 */
+--- Use Biblioteca
+
 
 
 /*
@@ -16,11 +17,12 @@ la siguientes lineas arman la estructura de tablas tanto para Idioma como para
 Autores, las mismas disponen de un unico PK que luego es usado en la tabla
 principal de 'libros' como FK's
 
-CREATE TABLE Idioma
-(
-    ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    Descripcion VARCHAR(100)
-)
+Generos por libros y autores por libros
+
+*/
+
+/*
+
 
 CREATE TABLE Autores
 (
@@ -29,28 +31,38 @@ CREATE TABLE Autores
 
 )
 
-CREATE TABLE Genero
+CREATE TABLE Generos
 (
     ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
     Autor VARCHAR(100)
-
 )
 
-create Table libros
+create Table Libros
 (
     ID INT NOT NULL PRIMARY KEY IDENTITY (1, 1),
-    Idioma FOREIGN KEY REFERENCES Idioma(ID),
+    Idioma varchar(50),
     Editorial varchar(50),
-    Genero varchar(20),
-    Autor FOREIGN KEY REFERENCES Autor(ID),
     CodLibro INT NOT NULL,
     CodAutor INT NOT NULL,
     CodIdioma INT NOT NULL,
     CodGenero INT NOT NULL,
 )
 
-*/
+CREATE TABLE Libros_x_Generos
+(
+    IDGenero INT NOT NULL FOREIGN KEY REFERENCES Generos(ID),
+    IDLibros INT NOT NULL FOREIGN KEY REFERENCES Libros(ID),
+    PRIMARY KEY(IDGenero, IDLibros)
+)
 
+CREATE TABLE Libros_x_Autores
+(
+    IDAutores INT NOT NULL FOREIGN KEY REFERENCES Autores(ID),
+    IDLibros INT NOT NULL FOREIGN KEY REFERENCES Libros(ID),
+    PRIMARY KEY(IDAutores, IDLibros)
+)
+
+*/
 
 
 /*
